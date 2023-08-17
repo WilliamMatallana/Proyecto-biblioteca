@@ -2,6 +2,12 @@ from django.shortcuts import render
 from .models import Biblioteca, Libro
 from .forms import NuevoLibroForm
 
+def index( request ):
+    title = "Django Project!!"
+    return render(request, 'index.html', {
+        'title': title
+    })
+
 def lista_bibliotecas(request):
     # Obtener todas las bibliotecas
     bibliotecas = Biblioteca.objects.all()
